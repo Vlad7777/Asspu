@@ -1,0 +1,231 @@
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE MANAGED SECTION
+# ---------------------------------------------------------------------------
+# The following section of the project makefile is managed by the BCB IDE.
+# It is recommended to use the IDE to change any of the values in this
+# section.
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.04.04
+# ---------------------------------------------------------------------------
+PROJECT = Asspu.exe
+OBJFILES = Asspu.obj mainw4.obj work.obj pack.obj new_work.obj new_pack.obj mdl_wind.obj \
+  main_set.obj main_sav.obj layout.obj l_relay.obj l_print.obj l_math2.obj \
+  l_math1.obj l_ce.obj gst_wind.obj gnt_wind.obj free_fn.obj connect.obj \
+  cal_wind.obj bas_wind.obj bas_obj.obj l_dde.obj l_ev.obj WorkDialogUnit.obj \
+  SPUDMUnit.obj DBTESTUnit.obj
+RESFILES = mainw4.res
+RESDEPEN = $(RESFILES) WorkDialogUnit.dfm SPUDMUnit.dfm DBTESTUnit.dfm
+LIBFILES =
+IDLGENFILES =
+IDLFILES =
+LIBRARIES = dclusr40.lib vcldb40.lib vcl40.lib
+SPARELIBS = vcl40.lib vcldb40.lib dclusr40.lib
+PACKAGES = vclx40.bpi vcl40.bpi vcldb40.bpi vcldbx40.bpi bcbsmp40.bpi dclocx40.bpi \
+  qrpt40.bpi teeui40.bpi teedb40.bpi tee40.bpi ibsmp40.bpi dss40.bpi nmfast40.bpi \
+  inetdb40.bpi inet40.bpi vclmid40.bpi
+DEFFILE =  asspu.def
+# ---------------------------------------------------------------------------
+PATHCPP = .;
+PATHASM = .;
+PATHRC = .;
+PATHPAS = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+SYSDEFINES = NO_STRICT
+USERDEFINES = BI_NAMESPACE;_OWLPCH;_USE_OWL_CM_EXIT
+# ---------------------------------------------------------------------------
+CFLAG1 = -I$(BCB)\Lib;$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\include\owlfiles\winsys;$(BCB)\include\owlfiles\ClassLib \
+  -Od -Hc -H=asspu.csm -Hh=owl\pch.h -w -Ve -Tkh30000 -r- -a8 -k -y -v -vi- \
+  -D$(SYSDEFINES);$(USERDEFINES) -c -w-par -w-inl -Vx -b- -R- -N- -W -tWM -n
+CFLAG2 =
+CFLAG3 =
+IDLCFLAGS = -I$(BCB)\Lib -I$(BCB)\include -I$(BCB)\include\owlfiles -I$(BCB)\include\vcl \
+  -I$(BCB)\include\owlfiles\winsys -I$(BCB)\include\owlfiles\ClassLib \
+  -src_suffixcpp -DBI_NAMESPACE -D_OWLPCH -D_USE_OWL_CM_EXIT
+PFLAGS = -U$(BCB)\Projects\Lib;$(BCB)\lib;$(BCB)\lib\obj;$(DEBUGLIBPATH) \
+  -I$(BCB)\Lib;$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\include\owlfiles\winsys;$(BCB)\include\owlfiles\ClassLib \
+  -DBI_NAMESPACE;_OWLPCH;_USE_OWL_CM_EXIT -$YD -$W -$O- -v -M -JPHNE
+AFLAGS = /i$(BCB)\Lib /i$(BCB)\include /i$(BCB)\include\owlfiles /i$(BCB)\include\vcl \
+  /i$(BCB)\include\owlfiles\winsys /i$(BCB)\include\owlfiles\ClassLib \
+  /dBI_NAMESPACE /d_OWLPCH /d_USE_OWL_CM_EXIT /mx /w2 /zi
+RFLAGS = -i$(BCB)\Lib;$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\include\owlfiles\winsys;$(BCB)\include\owlfiles\ClassLib \
+  -DBI_NAMESPACE;_OWLPCH;_USE_OWL_CM_EXIT
+LFLAGS = -L$(BCB)\Projects\Lib;$(BCB)\lib;$(BCB)\lib\obj;$(DEBUGLIBPATH) -aa -Tpe -x -Gn \
+  -v -c
+IFLAGS =
+# ---------------------------------------------------------------------------
+ALLOBJ = c0w32.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES)  vcl.lib owlwv.lib bidsv.lib import32.lib cp32mt.lib
+# ---------------------------------------------------------------------------
+!ifdef IDEOPTIONS
+
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=10
+Item0=$(BCB)\Lib;$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\include\owlfiles\winsys;$(BCB)\include\owlfiles\ClassLib
+Item1=$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\include\owlfiles\winsys;$(BCB)\include\owlfiles\ClassLib
+Item2=$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\INCLUDE;$(BCB)\include\owlfiles\winsys;$(BCB)\include\owlfiles\ClassLib
+Item3=..\program files\borland\cbuilder3\lib;$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\INCLUDE;$(BCB)\include\owlfiles\winsys;$(BCB)\include\owlfiles\ClassLib
+Item4=$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\INCLUDE;$(BCB)\include\owlfiles\winsys;$(BCB)\include\owlfiles\ClassLib;$(BCB)\include\MFC\res
+Item5=$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\INCLUDE;$(BCB)\include\owlfiles\winsys;$(BCB)\include\MFC\res   
+Item6=$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\INCLUDE;$(BCB)\include\owlfiles\winsys
+Item7=d:\program files\borland\cbuilder3\bin;5\include\owl;bc5\include\owl;..\;l;wl;owl;..\owl;e\owl;de\owl;ude\owl;lude\owl;clude\owl;nclude\owl;include\owl;..\include\owl;c5\include\owl;..\bc5\include\owl;:\bc5\include\owl;c:\bc5\include\owl;$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\INCLUDE;$(BCB)\include\owlfiles\winsys
+Item8=d:\program files\borland\cbuilder3\bin;5\include\owl;bc5\include\owl;..\;l;wl;owl;..\owl;e\owl;de\owl;ude\owl;lude\owl;clude\owl;nclude\owl;include\owl;..\include\owl;c5\include\owl;..\bc5\include\owl;:\bc5\include\owl;c:\bc5\include\owl;$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\INCLUDE;$(BCB)\include\owlfiles\owl;
+Item9=5\include\owl;bc5\include\owl;..\;l;wl;owl;..\owl;e\owl;de\owl;ude\owl;lude\owl;clude\owl;nclude\owl;include\owl;..\include\owl;c5\include\owl;..\bc5\include\owl;:\bc5\include\owl;c:\bc5\include\owl;$(BCB)\include;$(BCB)\include\owlfiles;$(BCB)\include\vcl;$(BCB)\INCLUDE
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=$(BCB)\Projects\Lib;$(BCB)\lib;$(BCB)\lib\obj
+Item1=$(BCB)\lib;$(BCB)\lib\obj
+Item2=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\LIB
+Item3=..\program files\borland\cbuilder3\lib;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\LIB
+Item4=d:\program files\borland\cbuilder3\bin;5\include\owl;bc5\include\owl;..\;l;wl;owl;..\owl;e\owl;de\owl;ude\owl;lude\owl;clude\owl;nclude\owl;include\owl;..\include\owl;c5\include\owl;..\bc5\include\owl;:\bc5\include\owl;c:\bc5\include\owl;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\LIB
+Item5=5\include\owl;bc5\include\owl;..\;l;wl;owl;..\owl;e\owl;de\owl;ude\owl;lude\owl;clude\owl;nclude\owl;include\owl;..\include\owl;c5\include\owl;..\bc5\include\owl;:\bc5\include\owl;c:\bc5\include\owl;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\LIB
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=7
+Item0=BI_NAMESPACE;_OWLPCH;_USE_OWL_CM_EXIT
+Item1=BI_NAMESPACE;STRICT;_OWLPCH;_USE_OWL_CM_EXIT;    
+Item2=BI_NAMESPACE;STRICT;_OWLPCH;_USE_OWL_CM_EXIT
+Item3=BI_NAMESPACE;STRICT;_OWLPCH;_USE_OWL_CM_EXIT;
+Item4=BI_NAMESPACE;STRICT;_OWLPCH
+Item5=BI_NAMESPACE;NOSTRICT;_OWLPCH
+Item6=BI_NAMESPACE;STRICT;_OWLPCH;
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+InMemoryExe=0
+ShowInfoMsgs=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+!endif
+
+# ---------------------------------------------------------------------------
+# MAKE SECTION
+# ---------------------------------------------------------------------------
+# This section of the project makefile is not used by the BCB IDE.  It is for
+# the benefit of building from the command-line using the MAKE utility.
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+
+!if !$d(IDL2CPP)
+IDL2CPP = idl2cpp
+!endif
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(IDLGENFILES) $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+   $(BCB)\BIN\$(LINKER) @&&! 
+   $(LFLAGS) + 
+   $(ALLOBJ), + 
+   $(PROJECT),, + 
+   $(ALLLIB), + 
+   $(DEFFILE), + 
+   $(ALLRES) 
+!
+# ---------------------------------------------------------------------------
+
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------

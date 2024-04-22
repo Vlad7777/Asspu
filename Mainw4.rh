@@ -1,0 +1,175 @@
+#ifndef __MAINW4_RH
+#define __MAINW4_RH
+
+#include <windows.h>
+#include <owl\window.rh>
+#include <owl\except.rh>
+#include <owl\except.rc>
+#include <owl\mdi.rh>
+#include <owl\statusba.rc>
+#include <owl\docview.rh>
+#include <owl\editfile.rh>       
+
+
+// Context sensitive help cursor.
+#define IDC_HELPCURSOR          24000
+
+//
+// String CM
+//
+#define CM_PRINT          100
+#define CM_PRINTERSETUP   CM_PRINT + 1
+#define CM_ABOUT			  CM_PRINTERSETUP + 1
+#define CM_ACTIVATEMDL	  CM_ABOUT + 1
+#define CM_ACTIVATEGNT	  CM_ACTIVATEMDL + 1
+#define CM_ACTIVATEGST	  CM_ACTIVATEGNT + 1
+#define CM_INDEXRESOURCE  CM_ACTIVATEGST + 1
+#define CM_ARRANGE        CM_INDEXRESOURCE + 1
+#define CM_CONVERT        CM_ARRANGE + 1
+#define CM_RENUMBER       CM_CONVERT + 1
+#define CM_BUILDTIME      CM_RENUMBER + 1
+#define CM_BUILDCRITICAL  CM_BUILDTIME + 1
+#define CM_UPDATEMODEL	  CM_BUILDCRITICAL + 1
+#define CM_UPDATEDBF		  CM_UPDATEMODEL + 1
+#define CM_BUILDRESOURCE  CM_UPDATEDBF + 1
+#define CM_BUILDPLAN      CM_BUILDRESOURCE + 1
+#define CM_UNPACK         CM_BUILDPLAN + 1
+#define CM_INPACK         CM_UNPACK + 1
+#define CM_SELECTWORK     CM_INPACK + 1
+#define CM_SELECTPACK     CM_SELECTWORK + 1
+#define CM_SETWORK        CM_SELECTPACK + 1
+#define CM_SETPACK        CM_SETWORK + 1
+#define CM_SETCONNECT     CM_SETPACK + 1
+#define CM_SETCALENDAR    CM_SETCONNECT + 1
+#define CM_SETBUILD       CM_SETCALENDAR + 1
+#define CM_SETSCALE       CM_SETBUILD + 1
+#define CM_WRITESET       CM_SETSCALE + 1
+#define CM_CLOSEPACK		  CM_WRITESET + 1
+#define CM_EDITPACK		  CM_CLOSEPACK + 1
+#define CM_OPTIMIZATION	  CM_EDITPACK + 1
+#define CM_HELPCONTENTS   CM_OPTIMIZATION + 1
+#define CM_HELPUSING      CM_HELPCONTENTS + 1
+#define CM_HELPABOUT      CM_HELPUSING + 1
+#define CM_SPUFOX         CM_HELPABOUT + 1
+#define CM_FIND           CM_SPUFOX + 1
+#define CM_CRITICALPATH   CM_FIND  + 1
+
+//
+// String IDS
+//
+#define IDS_UNABLESTRING  200
+#define IDS_ERROR         IDS_UNABLESTRING + 1
+#define IDS_ERRORPACKET   IDS_ERROR + 1
+#define IDS_CICLE         IDS_ERRORPACKET + 1
+#define IDS_HAVENOTWORK   IDS_CICLE + 1
+#define IDS_DELETE        IDS_HAVENOTWORK + 1
+#define IDS_DELETEWORK    IDS_DELETE + 1
+#define IDS_DELETEPACK    IDS_DELETEWORK + 1
+#define IDS_DELETECONNECTWORKWORK IDS_DELETEPACK + 1
+#define IDS_DELETECONNECTWORKPACKWORK IDS_DELETECONNECTWORKWORK + 1
+#define IDS_DELETECONNECTPACKWORKWORK IDS_DELETECONNECTWORKPACKWORK + 1
+#define IDS_DELETECONNECTPACKWORKPACKWORK IDS_DELETECONNECTPACKWORKWORK + 1
+
+//
+// String IDD and ID
+//
+
+#define IDD_ABOUT         300
+#define IDD_SELECTWORK    IDD_ABOUT + 1
+#define ID_LISTBOXWORK    IDD_SELECTWORK + 1
+
+#define IDD_SCALE         ID_LISTBOXWORK + 1
+#define ID_SCALEMDL       IDD_SCALE + 1
+#define ID_VSCALEGNT      ID_SCALEMDL + 1
+#define ID_VSCALEGST      ID_VSCALEGNT + 1
+#define ID_HSCALEGNTGST   ID_VSCALEGST + 1
+#define ID_TIME           ID_HSCALEGNTGST + 1
+#define ID_YEAR           ID_TIME + 1
+#define ID_MONTH          ID_YEAR + 1
+#define ID_WEEKDAY        ID_MONTH + 1
+#define ID_DAY            ID_WEEKDAY + 1
+#define ID_HOUR           ID_DAY + 1
+#define ID_MINUTE         ID_HOUR + 1
+
+#define IDD_PRINT_WINDOW  ID_MINUTE + 1
+#define ID_MDLCHECK       IDD_PRINT_WINDOW + 1
+#define ID_GNTCHECK       ID_MDLCHECK + 1
+#define ID_GSTCHECK       ID_GNTCHECK + 1
+
+#define IDD_INDEXRESOURCE ID_GSTCHECK + 1
+
+#define IDD_NEWPACK       IDD_INDEXRESOURCE + 1
+#define ID_START_DD  		IDD_NEWPACK + 1       
+#define ID_START_MM  		ID_START_DD + 1
+#define ID_START_YY  		ID_START_MM + 1   
+#define ID_START_hh        ID_START_YY + 1  
+#define ID_START_mm  		ID_START_hh + 1   
+#define ID_START_ss  		ID_START_mm + 1  
+#define ID_FINISH_DD       ID_START_ss + 1       
+#define ID_FINISH_MM 		ID_FINISH_DD + 1
+#define ID_FINISH_YY 		ID_FINISH_MM + 1   
+#define ID_FINISH_hh 		ID_FINISH_YY + 1  
+#define ID_FINISH_mm 		ID_FINISH_hh + 1   
+#define ID_FINISH_ss 		ID_FINISH_mm + 1  
+#define IDC_LTEXT1	336
+
+
+
+#define IDD_SETEVENT        350
+#define ID_EVENT			    IDD_SETEVENT + 1
+#define ID_BAR1             ID_EVENT + 1
+#define ID_BAR2             ID_BAR1 + 1
+#define ID_BAR3             ID_BAR2 + 1
+#define ID_SETFONT		    ID_BAR3 + 1
+#define ID_SETCOLORMAIN     ID_SETFONT + 1
+#define ID_SETCOLORCRIT     ID_SETCOLORMAIN + 1
+#define ID_SETCOLORRESOURCE ID_SETCOLORCRIT + 1
+#define ID_SETCOLORPERCENT  ID_SETCOLORRESOURCE + 1
+
+#define IDD_SETCONNECT    ID_SETCOLORPERCENT + 1
+#define ID_CONNECT		  IDD_SETCONNECT + 1
+#define ID_SETPENMAIN     ID_CONNECT + 1
+#define ID_SETPENCRIT     ID_SETPENMAIN + 1
+
+#define IDD_SETCALENDAR   ID_SETPENCRIT + 1
+#define ID_CALENDAR       IDD_SETCALENDAR + 1
+
+#define IDD_SETBUILD      ID_CALENDAR + 1
+#define ID_CRITICALTIME   IDD_SETBUILD + 1           
+
+#define IDD_NEWWORK       		 ID_CRITICALTIME + 1
+#define ID_NAME           		 IDD_NEWWORK + 1
+#define ID_NUMBER			       ID_NAME + 1
+#define ID_INDEXBRIGADE        ID_NUMBER	+ 1
+#define ID_INDEXPACK           ID_INDEXBRIGADE + 1
+#define ID_INDEXSHIFT          ID_INDEXPACK + 1
+#define ID_DURATION_hh         ID_INDEXSHIFT + 1
+#define ID_DURATION_mm       	 ID_DURATION_hh + 1
+#define ID_DURATION_ss       	 ID_DURATION_mm+ 1
+#define ID_LISTBOXRESOURCEALL  ID_DURATION_ss + 1
+#define ID_LISTBOXRESOURCEWORK ID_LISTBOXRESOURCEALL + 1
+#define ID_SHIFTSTART_hh  	 	 ID_LISTBOXRESOURCEWORK + 1
+#define ID_SHIFTSTART_mm    	 ID_SHIFTSTART_hh + 1
+#define ID_SHIFTSTART_ss  	 	 ID_SHIFTSTART_mm + 1
+#define ID_SHIFTFINISH_hh	  	 ID_SHIFTSTART_ss + 1  
+#define ID_SHIFTFINISH_mm	 	 ID_SHIFTFINISH_hh + 1	 
+#define ID_SHIFTFINISH_ss	 	 ID_SHIFTFINISH_mm + 1	 
+#define ID_PERCENT	 	 		 ID_SHIFTFINISH_ss + 1 	 
+#define ID_ADDRESOURCE	  		 ID_PERCENT + 1
+#define ID_REMOVERESOURCE	  	 ID_ADDRESOURCE + 1 
+#define ID_WEEKEND             ID_REMOVERESOURCE + 1 
+
+#define IDD_NEWRESOURCE	  ID_WEEKEND + 1
+#define ID_INDEXRESOURCE  IDD_NEWRESOURCE + 1
+#define ID_RESOURCEMIN    ID_INDEXRESOURCE + 1  
+#define ID_RESOURCEOPT    ID_RESOURCEMIN + 1    
+#define ID_RESOURCEMAX    ID_RESOURCEOPT + 1    
+#define ID_RESOURCE    	  ID_RESOURCEMAX + 1    
+#define ID_VOLUME         ID_RESOURCE + 1    
+
+#define IDD_SEEWORK       ID_VOLUME + 1
+
+#define ID_NETBUTTON		  IDD_SEEWORK + 1
+#define ID_DURATION_OPT_hh ID_NETBUTTON + 1
+
+#endif // __MAINW4_RH

@@ -1,0 +1,6 @@
+//SUPPRESSIONPROJ:asspu
+//VERSION:5.00
+//ENABLE:Yes
+!include OWL.SUP
+!include RTL.SUP
+

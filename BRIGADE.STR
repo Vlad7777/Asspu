@@ -1,0 +1,6 @@
+struct brigade
+	{
+	char b1[ 11 ];
+	char Name[ 40 ];
+	char b2[ 5 ];
+	};

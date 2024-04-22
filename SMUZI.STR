@@ -1,0 +1,13 @@
+struct smuzi
+	{
+	char b1[ 8 ];
+	char b2[ 12 ];
+	char b3[ 12 ];
+	char b4[ 2 ];
+	char b5[ 8 ];
+	char StartTime[ 11 ];
+	char FinishTime[ 11 ];
+	char Name[ 80 ];
+	};
+
+

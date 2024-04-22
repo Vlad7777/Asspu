@@ -1,0 +1,32 @@
+[OPTIONS]
+TITLE=ASSPU++ 1.0  Help
+FORCEFONT=Times New Roman Cyr 
+
+[FILES]
+vp.rtf
+
+[CONFIG]
+BrowseButtons()
+
+[BITMAPS]
+close_p.bmp
+edit_p.bmp
+empty_p.bmp
+gnt.bmp
+gst.bmp
+incompat.bmp
+mdl.bmp
+new.bmp
+open.bmp
+pack.bmp
+parallel.bmp
+print.bmp
+save.bmp
+save_as.bmp
+scale.bmp
+serial.bmp
+work.bmp
+
+[MAP]
+#include <vp.hh>
+#include <spu_lapp.rh>
